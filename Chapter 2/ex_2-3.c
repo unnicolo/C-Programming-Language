@@ -1,4 +1,5 @@
-/*  Exercise 2.3 - The C Programming Language
+/*
+**  Exercise 2.3 - The C Programming Language
 **  Write the function htoi(s), which converts a string of
 **  hexadecimal digits (including an optional 0x or 0X) into its
 **  equivalent integer value.

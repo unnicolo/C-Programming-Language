@@ -1,4 +1,5 @@
-/*  Exercise 2.2 - The C Programming Language
+/*
+**  Exercise 2.2 - The C Programming Language
 **  Write a loop equivalent to the following loop without using && or ||
 **  for (int i = 0; i<lim-1 && (c=getchar()) != '\n' && c != EOF; ++i)
 **      s[i] = c;
