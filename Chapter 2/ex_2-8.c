@@ -17,7 +17,9 @@ int main(void) {
     printf("expected value is 256\n");
 }
 
-/*  rightrot: returns the value of x rotated to the right by n bit positions */
+/*  rightrot: returns the value of x rotated to the right by n bit positions
+**      n is assumed to be a valid number
+*/
 unsigned rightrot(unsigned x, int n) {
     return x >> n;
 }
