@@ -21,6 +21,7 @@
 #define SWAP ';'
 #define DUPL ':'
 #define CLEAR '!'
+#define LAST '$'
 
 int getop(char []);
 void push(double);
@@ -34,6 +35,7 @@ void handleVariable(char []);
 
 double variables[NUMVARS];
 int varIsSet[NUMVARS] = {0};
+double last;
 // reverse polish calculator
 int main(void) {
     int type;
@@ -92,7 +94,8 @@ int main(void) {
                 clear1();
                 break;
             case '\n':
-                printf("\t%.8g\n", pop());
+                last = pop();
+                printf("\t%.8g\n", last);
                 break;
             default:
                 printf("error: unknown command %s\n", s);
@@ -145,6 +148,8 @@ void handleVariable(char s[]) {
         } else {
             push(variables[c - 'a']);
         }
+    } else if (c == LAST) {
+        push(last);
     }
 }
 
@@ -210,7 +215,7 @@ int getop(char s[]) {
     s[1] = '\0';
     
     i = 0;
-    if (isalpha(c)) {
+    if (isalpha(c) || c == LAST) {
         s[i] = c;
         while (isalpha(c = getch())) {
             s[++i] = c;
