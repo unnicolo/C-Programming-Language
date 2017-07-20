@@ -11,9 +11,6 @@
 
 #define MAXSIZE 1024
 
-// strindex
-// getop
-
 int mygetline(char *, int);
 int myatoi1(const char *);
 int myatoi2(const char *);
@@ -68,6 +65,7 @@ int main(void) {
     } else {
         printf("string \"%s\" not in string \"%s\"\n", s6, s5);
     }
+
     return 0;
 }
 
